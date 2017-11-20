@@ -12,6 +12,7 @@
 		83E495EF1F6C0D2E00A7CD52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E495ED1F6C0D2E00A7CD52 /* Main.storyboard */; };
 		83E495F11F6C0D2E00A7CD52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83E495F01F6C0D2E00A7CD52 /* Assets.xcassets */; };
 		83E495F41F6C0D2E00A7CD52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E495F21F6C0D2E00A7CD52 /* LaunchScreen.storyboard */; };
+		83E495FE1F6C0E0E00A7CD52 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E495FD1F6C0E0E00A7CD52 /* ConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		83E495F01F6C0D2E00A7CD52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83E495F31F6C0D2E00A7CD52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83E495F51F6C0D2E00A7CD52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83E495FD1F6C0E0E00A7CD52 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		83E495E81F6C0D2E00A7CD52 /* SkyLine2D */ = {
 			isa = PBXGroup;
 			children = (
+				83E495FD1F6C0E0E00A7CD52 /* ConnectionManager.swift */,
 				83E495E91F6C0D2E00A7CD52 /* AppDelegate.swift */,
 				83E495EB1F6C0D2E00A7CD52 /* ViewController.swift */,
 				83E495ED1F6C0D2E00A7CD52 /* Main.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83E495EC1F6C0D2E00A7CD52 /* ViewController.swift in Sources */,
+				83E495FE1F6C0E0E00A7CD52 /* ConnectionManager.swift in Sources */,
 				83E495EA1F6C0D2E00A7CD52 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +308,7 @@
 				83E495FA1F6C0D2E00A7CD52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
