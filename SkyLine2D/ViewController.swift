@@ -9,34 +9,25 @@
 import UIKit
 import CoreFoundation
 
-class ViewController: UIViewController
-{
+class ViewController: UIViewController {
     let connectionManager = ConnectionManager()
     
-    @IBAction func StopMotor(_ sender: UIButton)
-    {
+    @IBAction func StopMotor(_ sender: UIButton) {
         connectionManager.sendMessage(message: 0)
     }
-    
-    @IBAction func DriveForward(_ sender: UIButton)
-    {
+    @IBAction func DriveForward(_ sender: UIButton) {
         connectionManager.sendMessage(message: 1)
     }
-    
-    @IBAction func DriveBackward(_ sender: UIButton)
-    {
+    @IBAction func DriveBackward(_ sender: UIButton) {
         connectionManager.sendMessage(message: 2)
     }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        
         connectionManager.connectTo(address: "169.254.0.1", port: "7000")
     }
     
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

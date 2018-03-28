@@ -8,15 +8,13 @@
 
 import Foundation
 
-class ConnectionManager
-{
+class ConnectionManager {
     var connected: Bool
     var port: String
     var socketFileDescriptor: Int32
     var command: UnsafeMutablePointer<Int8> = UnsafeMutablePointer.allocate(capacity: 1)
     
-    init()
-    {
+    init() {
         connected = false
         port = .init()
         socketFileDescriptor = 0
@@ -26,8 +24,7 @@ class ConnectionManager
     
     // This had to be done in a bit of an unusual way for Swift since all the functions
     // for socket programming are C functions
-    func connectTo(address: String, port: String)
-    {
+    func connectTo(address: String, port: String) {
         var hints = addrinfo();
         var serverInfo: UnsafeMutablePointer<addrinfo>?;
         
@@ -36,30 +33,21 @@ class ConnectionManager
         
         let status = getaddrinfo(address, port, &hints, &serverInfo)
         
-        if(status >= 0)
-        {
+        if(status >= 0) {
             socketFileDescriptor = socket((serverInfo?.pointee.ai_family)!, (serverInfo?.pointee.ai_socktype)!, (serverInfo?.pointee.ai_protocol)!)
             
-            if(socketFileDescriptor >= 0)
-            {
+            if(socketFileDescriptor >= 0) {
                 let connectionSuccess = connect(socketFileDescriptor, serverInfo?.pointee.ai_addr, (serverInfo?.pointee.ai_addrlen)!)
                 
-                if(connectionSuccess < 0)
-                {
+                if(connectionSuccess < 0) {
                     print("error: unable to connect")
-                }
-                else
-                {
+                } else {
                     connected = true
                 }
-            }
-            else
-            {
+            } else {
                 print("error: unable to create socket")
             }
-        }
-        else
-        {
+        } else {
             print("error: getaddrinfo failed")
         }
         
@@ -67,22 +55,17 @@ class ConnectionManager
         
     }
     
-    func sendMessage(message: Int8)
-    {
-        if(connected)
-        {
+    func sendMessage(message: Int8) {
+        if(connected) {
             var bytesSent: Int
             command.pointee = message
             
             bytesSent = send(socketFileDescriptor, command, MemoryLayout<Int8>.size, 0)
             
-            if(bytesSent < 0)
-            {
+            if(bytesSent < 0) {
                 print("error: unable to send command")
             }
-        }
-        else
-        {
+        } else {
             print("error: Not connected")
         }
     }
