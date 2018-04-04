@@ -16,7 +16,7 @@ class ConnectionManager {
     
     init() {
         connected = false
-        port = .init()
+        port = .init()        
         socketFileDescriptor = 0
     }
     
@@ -43,6 +43,7 @@ class ConnectionManager {
                     print("error: unable to connect")
                 } else {
                     connected = true
+                    print("connected")
                 }
             } else {
                 print("error: unable to create socket")
